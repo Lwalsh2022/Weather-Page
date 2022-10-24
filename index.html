@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Weather App</title>
     <link rel="stylesheet" href="Assets\style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     
   <body>
@@ -12,7 +13,7 @@
     <center>
     <h1 id="para1">5 Day Weather Forecast</h1>
     <p id="inputContainer">City:  <input type="text" id="cityInput"></p>
-    <button>Click Me</button>
+    <button onclick="GetInfo()">Click Me</button>
     <h2 id="cityName">--New York--</h2>
     </center>
 
@@ -27,7 +28,7 @@
             12:09 <span id="am-pm">PM</span>
             </div>
             <div class="date" id="date">
-              Saturday, October 23
+              Saturday, October 22
             </div>
             <div class="others" id="current-weather-items">
               <div class="weather-item">
@@ -40,7 +41,7 @@
               </div>
               <div class="weather-item">
                 <div>Wind Speed</div>
-                <div>3000%</div>
+                <div>3000mph</div>
               </div>
              
             </div>
@@ -53,40 +54,40 @@
         </div>
         </div>
 
-        <div class="future-forecast"> 
+        <div class="future-forecast" id="weather-forecast">
           <div class="today" id="current-temp">
-            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" cl<ass="w-icon">
+            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
               <div class="other">
-                <div class="day">Monday</div>
-                <div class="temp">High - 100&#176;</div>
-                <div class="temp">Low - 45&#176;</div>
+                <div class="day" id="day">Monday</div>
+                <div class="temp" id="Max">High - 100&#176;</div>
+                <div class="temp" id="Min">Low - 45&#176;</div>
               </div>
            
           </div>
           <div class="weather-forecast" id="weather-forecast">
             <div class="weather-forecast-item">
-              <div class="day">Tuesday</div>
-              <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" cl<ass="w-icon">
-              <div class="temp">High - 100&#176;</div>
-              <div class="temp">Low - 45&#176;</div>
+              <div class="day" id="day">Tuesday</div>
+              <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+              <div class="Temp" id="Max">High - 100&#176;</div>
+              <div class="Temp" id="Min">Low - 45&#176;</div>
             </div>
-            <div class="weather-forecast-item">
-              <div class="day">Wednesday</div>
-              <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" cl<ass="w-icon">
-              <div class="temp">High - 100&#176;</div>
-              <div class="temp">Low - 45&#176;</div>
+            <div class="weather-forecast-item" id="weather-forecast">
+              <div class="day" id="day">Wednesday</div>
+              <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+              <div class="temp" id="Max">High - 100&#176;</div>
+              <div class="temp" id="Min">Low - 45&#176;</div>
             </div>
-            <div class="weather-forecast-item">
-              <div class="day">Thursday</div>
-              <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" cl<ass="w-icon">
-              <div class="temp">Day - 100&#176;</div>
-              <div class="temp">Night - 45&#176;</div>
+            <div class="weather-forecast-item" id="weather-forecast">
+              <div class="day" id="day">Thursday</div>
+              <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+              <div class="temp" id="Max">High - 100&#176;</div>
+              <div class="temp" id="Min">Low - 45&#176;</div>
             </div>
-            <div class="weather-forecast-item">
-              <div class="day">Friday</div>
-              <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" cl<ass="w-icon">
-              <div class="temp">High - 100&#176;</div>
-              <div class="temp">Low - 45&#176;</div>
+            <div class="weather-forecast-item" id="weather-forecast">
+              <div class="day" id="day">Friday</div>
+              <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+              <div class="temp" id="Max">High - 100&#176;</div>
+              <div class="temp" id="Min">Low - 45&#176;</div>
             </div>
             
       </div>
@@ -95,6 +96,6 @@
 
 
 
-    <script src=" script.js"></script>
+    <script src="script - Copy.js"></script>
   </body>
 </html>
