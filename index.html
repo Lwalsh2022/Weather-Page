@@ -16,78 +16,45 @@
     <button onclick="GetInfo()">Click Me</button>
     <h2 id="cityName">--New York--</h2>
     </center>
-
-
-
-
-
-    <div class="container">
-      <div class="current-info">
-        <div class="date-container">
-          <div class="time" id="time">
-            12:09 <span id="am-pm">PM</span>
-            </div>
-            <div class="date" id="date">
-              Saturday, October 22
-            </div>
-            <div class="others" id="current-weather-items">
-              <div class="weather-item">
-                <div>Temperature</div>
-                <div>100</div>
-              </div>
-              <div class="weather-item">
-                <div>Humidity</div>
-                <div>100%</div>
-              </div>
-              <div class="weather-item">
-                <div>Wind Speed</div>
-                <div>3000mph</div>
-              </div>
-             
-            </div>
-          </div>
-
         
         </div>
-     
-        
-        </div>
-      </div>
 
         <div class="future-forecast" id="weather-forecast">
           <div class="today" id="current-temp">
             <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
               <div class="other">
-                <div class="day" id="day">Monday</div>
-                <div class="temp" id="Max">High - 100&#176;</div>
-                <div class="temp" id="Min">Low - 45&#176;</div>
+                <div class="day">Monday</div>
+                <div class="temp" id="Max1"></div>
+                <div class="temp" id="Min1"></div>
+                <div class="humidity" id="Humidity1"></div>
+                <div class="windspeed" id="Wind1"></div>
               </div>
            
           </div>
           <div class="weather-forecast" id="weather-forecast">
             <div class="weather-forecast-item">
-              <div class="day" id="day">Tuesday</div>
+              <div class="day">Tuesday</div>
               <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-              <div class="Temp" id="Max">High - 100&#176;</div>
-              <div class="Temp" id="Min">Low - 45&#176;</div>
+              <div class="temp" id="Max2">High - 100&#176;</div>
+              <div class="temp" id="Min2">Low - 45&#176;</div>
             </div>
             <div class="weather-forecast-item" id="weather-forecast">
-              <div class="day" id="day">Wednesday</div>
+              <div class="day">Wednesday</div>
               <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-              <div class="temp" id="Max">High - 100&#176;</div>
-              <div class="temp" id="Min">Low - 45&#176;</div>
+              <div class="temp" id="Max3">High - 100&#176;</div>
+              <div class="temp" id="Min3">Low - 45&#176;</div>
             </div>
             <div class="weather-forecast-item" id="weather-forecast">
-              <div class="day" id="day">Thursday</div>
+              <div class="day">Thursday</div>
               <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-              <div class="temp" id="Max">High - 100&#176;</div>
-              <div class="temp" id="Min">Low - 45&#176;</div>
+              <div class="temp" id="Max4">High - 100&#176;</div>
+              <div class="temp" id="Min4">Low - 45&#176;</div>
             </div>
             <div class="weather-forecast-item" id="weather-forecast">
-              <div class="day" id="day">Friday</div>
+              <div class="day">Friday</div>
               <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-              <div class="temp" id="Max">High - 100&#176;</div>
-              <div class="temp" id="Min">Low - 45&#176;</div>
+              <div class="temp" id="Max5">High - 100&#176;</div>
+              <div class="temp" id="Min5">Low - 45&#176;</div>
             </div>
             
       </div>
@@ -95,7 +62,7 @@
     </div>
 
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="script - Copy.js"></script>
   </body>
 </html>
