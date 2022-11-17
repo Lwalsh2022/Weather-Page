@@ -16,6 +16,13 @@ var currenthour = moment().hours();
 var base = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + API_KEY;
 console.log('success')
 
+
+// for fun challenge: figure out how to get 'better' dates than today, tomorrow, etc
+// a way to do this would be to look at the moment.js docs and see if there's a way to get the day of the week
+// then you can write those days into the html
+
+
+
 $(document).ready(function() {
             $('#currentDay').html(moment().format('dddd, MMMM Do YYYY'));
 
@@ -66,7 +73,7 @@ $(document).ready(function() {
                             console.log(windSpeed)
                         // now lets put our data on the page
                             let weather = document.getElementsByClassName('temp');
-                            console.log('weather', weather)
+                            // console.log('weather', weather)
                             weather[0].innerHTML = 'High: ' + temp_max + '°F';
                             // weather[0].innerHTML = `Temp Max: ${temp_max}°F`;    // another way of doing the same
                             weather[1].innerHTML = 'Low: ' + temp_min + '°F';
@@ -77,31 +84,76 @@ $(document).ready(function() {
 
                             // const forecasturl = `https://api.openweathermap.org/data/2.5/forecast?lat=35.4986206&lon=-82.5163212&appid=a22913bc70f5fe7ee10c9e482a3928e9`;
                             const fivedayforecasturl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=a22913bc70f5fe7ee10c9e482a3928e9&units=imperial`;
+                            console.log('lat', lat,'long', long)
                             fetch(fivedayforecasturl)
                             .then((response) => {
                                 return response.json();
                             })
                         .then((data) => {
-                             //console.log('data', data)
-                             const {
-                                temp_max
-                            } = data.main;
-                            const {
-                                temp_min
-                            } = data.main;
-                            const place = data.name;
-                            const {
-                                description,
-                                icon
-                            } = data.weather[0];
+                            console.log('data', data)
+                            const futureweather = data.list
+                            const futuretempmax = []   // this collects each max temp at noon for five day forecast
+                            //gather min temps
+                            const futuretempmin = []   // this collects each min temp at noon for five day forecast
+                            //gather humiditys
+                            const futurehumidity = []   // this collects each humidity at noon for five day forecast
+                            //gather wind speeds
+                            const futurewindspeed = []   // this collects each wind speed at noon for five day forecast
 
-                             let weather2 = document.getElementById('max2');
-                             //console.log('weather', weather)
-                            weather2.innerHTML = temp_max
-                            weather[1].innerHTML = temp_min  
-                                
+                            // there are 40 weather calls and we need to loop over them
+                                for (let i = 0; i < futureweather.length; i++) {
+                                    // we only want the weather at 12:00pm
+                                    if (futureweather[i].dt_txt.includes("12:00:00")) {
+                                        // find max temp
+                                        futuretempmax.push(futureweather[i].main.temp_max)
+                                        // find min temp
+                                        futuretempmin.push(futureweather[i].main.temp_min)
+                                        // find humidity
+                                        futurehumidity.push(futureweather[i].main.humidity)
+                                        // find wind speed
+                                        futurewindspeed.push(futureweather[i].wind.speed)
+                                    }
+                                }
+                            // now we will put our temp max info into the html
+                            const tomorrowtempmax = document.querySelector('#Max2')
+                            const twodaysmaxtemp = document.querySelector('#Max3')
+                            const threedaysmaxtemp = document.querySelector('#Max4')
+                            const fourdaysmaxtemp = document.querySelector('#Max5')
+                            tomorrowtempmax.innerHTML = 'High: ' + futuretempmax[0] + '°F';
+                            twodaysmaxtemp.innerHTML = 'High: ' + futuretempmax[1] + '°F';
+                            threedaysmaxtemp.innerHTML = 'High: ' + futuretempmax[2] + '°F';
+                            fourdaysmaxtemp.innerHTML = 'High: ' + futuretempmax[3] + '°F';
 
-                            })
+                            // now we will put our temp min info into the html
+                            const tomorrowtempmin = document.querySelector('#Min2')
+                            const twodaysmintemp = document.querySelector('#Min3')
+                            const threedaysmintemp = document.querySelector('#Min4')
+                            const fourdaysmintemp = document.querySelector('#Min5')
+                            tomorrowtempmin.innerHTML = 'Low: ' + futuretempmin[0] + '°F';
+                            twodaysmintemp.innerHTML = 'Low: ' + futuretempmin[1] + '°F';
+                            threedaysmintemp.innerHTML = 'Low: ' + futuretempmin[2] + '°F';
+                            fourdaysmintemp.innerHTML = 'Low: ' + futuretempmin[3] + '°F';
+
+                            // now we will put our humidity info into the html
+                            const tomorrowhumidity = document.querySelector('#Humidity2')
+                            const twodayshumidity = document.querySelector('#Humidity3')
+                            const threedayshumidity = document.querySelector('#Humidity4')
+                            const fourdayshumidity = document.querySelector('#Humidity5')
+                            tomorrowhumidity.innerHTML = 'Humidity: ' + futurehumidity[0] + '%';
+                            twodayshumidity.innerHTML = 'Humidity: ' + futurehumidity[1] + '%';
+                            threedayshumidity.innerHTML = 'Humidity: ' + futurehumidity[2] + '%';
+                            fourdayshumidity.innerHTML = 'Humidity: ' + futurehumidity[3] + '%';
+
+                            // now we will put our wind speed info into the html
+                            const tomorrowwindspeed = document.querySelector('#Wind2')
+                            const twodayswindspeed = document.querySelector('#Wind3')
+                            const threedayswindspeed = document.querySelector('#Wind4')
+                            const fourdayswindspeed = document.querySelector('#Wind5')
+                            tomorrowwindspeed.innerHTML = 'Wind Speed: ' + futurewindspeed[0] + ' MPH';
+                            twodayswindspeed.innerHTML = 'Wind Speed: ' + futurewindspeed[1] + ' MPH';
+                            threedayswindspeed.innerHTML = 'Wind Speed: ' + futurewindspeed[2] + ' MPH';
+                            fourdayswindspeed.innerHTML = 'Wind Speed: ' + futurewindspeed[3] + ' MPH';
+                        });
 
                         });
                 })
