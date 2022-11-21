@@ -8,23 +8,24 @@
 }
 
 body{
-    background-image: url("https://pikwizard.com/photos/beach-landscape--896f58bfa29ba036c94891845993e0cf-m.jpg");
+    /* background-image: url("https://pikwizard.com/photos/beach-landscape--896f58bfa29ba036c94891845993e0cf-m.jpg"); */
+    background-image: url("https://th-thumbnailer.cdn-si-edu.com/q6_SCG7x_2miVVYUKBMXR7im_ME=/1000x750/filters:no_upscale()/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/2e/40/2e40ed82-5cda-4068-8457-257d3f100b9d/42-25763390.jpg");
     font-family: 'playfair display', sans-serif;
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
     height: 100vh;
+    color: white;
+    
 
 }
 
 #para1, #cityInput, #cityName, #inputContainer, button{
-    /* display: flex; */
-    /* flex-direction:  */
-    /* background: rgb(241, 241, 240, 0.6); */
+   
     padding: 20px;
-    /* border-radius: 10px; */
+  
     margin: 10px, 0;
-    /* border: 2px solid #eee;  */
+    
 }
 
 .container{
@@ -60,7 +61,7 @@ body{
 
 }
 
-.place-container .time-zone{
+/* .place-container .time-zone{
     font-size: 15px;
     font-weight: 200;
 }
@@ -68,56 +69,79 @@ body{
 .place-container .country{
     font-size: 15px;
     font-weight: 200;
-}
+} */
 
-.current-info .others{
+/* .current-info .others{
     display: flex;
     flex-direction: column;
     background: rgb(241, 241, 240, 0.6);
-    padding: 20px;
+    padding: 25px;
     border-radius: 10px;
     margin: 10px, 0;
-    border: 2px solid #eee;
+    border: 2px solid #eee; */
+
+
+
+
+
+
+    
 }
 
 .current-info .others .weather-item{
     display: flex;
     justify-content: space-between;
 }
-
+/* styling for today's weather */
 .future-forecast{
-    background: rgb(241, 241, 240, 0.6); 
-    padding: 25px;
-    position: fixed;
+    background: rgb(241, 241, 240, 0.3); 
+    /* padding: 25px; */
+    /* position: fixed; */
     bottom: 0;
-    display: flex;
+    /* display: flex; */
     width: 100%;
     align-items: center;
     justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin:0 10px;
+    /* border: 2px solid #eee; */
+    border-radius: 10px;
+    padding: 15px;
+
+
+
 }
 
 .future-forecast .today{
     display: flex;
     align-items: center;
     justify-content: center;
+    /* border: 2px solid #eee;  */
+   
+    
 }
 
 .future-forecast .today .day{
-    padding: 5px 15px;
+    padding: 15px 15px;
     background: rgb(241, 241, 240, 0.6); 
     border-radius: 50px;
     text-align: center;
+    color: black
 }
 
 .future-forecast .today .temp{
     font-size: 25px;
-    padding-top: 15px;
+    padding-top: 15px; 
 
 }
 .future-forecast .weather-forecast{
     display: flex;
 }
 
+/* sytling for the 5 day forecast */
 .weather-forecast .weather-forecast-item{
     display: flex;
     flex-direction: column;
@@ -126,21 +150,22 @@ body{
     margin: 0 10px;
     border: 2px solid #eee;
     border-radius: 10px;
-    padding: 5px;
+    padding: 15px;
 }
 
 .weather-forecast .weather-forecast-item .day{
-    padding: 5px 15px;
+    padding: 15px 15px;
     background: rgb(241, 241, 240, 0.6); 
     border-radius: 50px; 
     text-align: center;
 }
 
 weather-forecast .weather-forecast-item .temp{
-    padding: 5px 15px;
+    padding: 15px 15px;
     background: rgb(241, 241, 240, 0.6); 
     border-radius: 50px; 
     text-align: center;
+    
 }
 
 @media only screen and (max-width:730px){

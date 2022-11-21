@@ -9,18 +9,20 @@
     </head>
     
   <body>
-
+    <div>
     <center>
     <h1 id="para1">5 Day Weather Forecast</h1>
-    <!-- <p id="inputContainer">City:  <input type="text" id="cityInput"></p>
-    <button onclick="GetInfo()">Click Me</button> -->
-    <h2 id="cityName">Asheville</h2>
+    <p id="inputContainer">City:  <input type="text" id="cityInput"></p>
+    <button id="locationButton">Click Me</button>
+    <h2 id="cityName"></h2>
     </center>
-        
-        </div>
+    </div>
 
+  
+
+    <div class="container">
         <div class="future-forecast" id="weather-forecast">
-          <div class="today" id="current-temp">
+        <div class="today" id="current-temp">
             <!-- <div class="day">Today</div> -->
             <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
               <div class="other">
@@ -31,7 +33,6 @@
                 <div class="windspeed" id="Wind1">Wind Speed</div>
               </div>
            
-          </div>
           <div class="weather-forecast" id="weather-forecast">
             <div class="weather-forecast-item">
               <div class="day">Tomorrow</div>
@@ -65,10 +66,9 @@
               <div class="humidity" id="Humidity5">Humidity</div>
               <div class="windspeed" id="Wind5">Wind Speed</div>
             </div>
+          </div>
             
-      </div>
-     </div>
-    </div>
+     
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
